@@ -1,33 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>weatherAPI</title>
-</head>
-<body>
-  <div class="main-article">
-    <div class="main-article__items">
-      <button class="main-article__button">search</button>
-      <div class="main-article__select-container">
-        <select class="main-article__select" name="country" id="idCountry">
-          <option value="noValueCountry" id="noIDCountry">--Please choose an option--</option>
-        </select>
-        <select class="main-article__select" name="someName" id="idCity">
-          <option value="noValueCity" id="noIDCity">--Please choose an option--</option>
-        </select>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>weatherAPI</title>
+  </head>
+
+  <body>
+    <div class="main-article">
+      <div class="main-article__items">
+        <div class="main-article__select-container">
+          <button id="button_Country" class="main-article__button">search</button>
+          <select class="main-article__select" name="country" id="idCountry">
+            <option value="noValueCountry" id="noIDCountry">
+              --Please choose an option--
+            </option>
+          </select>
+          <button id="button_City" class="main-article__button">search</button>
+          <select class="main-article__select" name="someName" id="idCity">
+            <option value="noValueCity" id="noIDCity">
+              --Please choose an option--
+            </option>
+          </select>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="weather-info" id="generalInfo">
-    <p id="CityName"></p>
-    <p id="TimeZone"></p>
-    <p id="description"></p>
-  </div>
+    <div class="weather-info" id="generalInfo">
+      <p id="CityName"></p>
+      <p id="TimeZone"></p>
+      <p id="description"></p>
+    </div>
 
-  <script type="module" src="./script.js"></script>
-</body>
+    <script type="module" src="./script.js"></script>
+  </body>
 </html>
