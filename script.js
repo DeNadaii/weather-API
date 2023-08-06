@@ -22,20 +22,33 @@ function removeOptions(selectElement) {
     for(i = L; i >= 0; i--) {
        selectElement.remove(i);
     }
- }
+}
+
+function createInformationPanel(){
+    var div = document.getElementById("generalInfo")
+    div.setAttribute("class","weather-info")
+    div.innerHTML = `
+    <p id="CityName"></p>
+    <p id="Temperature"></p>
+    <p id="TimeZone"></p>
+    <p id="description"></p>
+    `
+}
 
 function checkCityValue() {
     var dnd = document.querySelector('#idCity');
-    let cityname = dnd.options[dnd.selectedIndex].value;
+    var cityname = dnd.options[dnd.selectedIndex].value;
     console.log("city Name:", cityname)
+    createInformationPanel()
     showInformationOnPage(JSON.parse(requestCityWeatherFromAPI(cityname)))
     console.log(JSON.parse(requestCityWeatherFromAPI(cityname)))
 }
 
 function checkCountryValue() {
     var dnd = document.querySelector('#idCountry');
-    let id = dnd.options[dnd.selectedIndex].id;
+    var id = dnd.options[dnd.selectedIndex].id;
     console.log("id country:", id)
     removeOptions(document.getElementById('idCity'));
     getCityAfterSelectCountry(id)
 }
+
